@@ -1,0 +1,40 @@
+<h1>Editing response</h1>
+
+<% form_for(@response) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :vegetarian %><br />
+    <%= f.text_field :vegetarian %>
+  </p>
+  <p>
+    <%= f.label :vegan %><br />
+    <%= f.text_field :vegan %>
+  </p>
+  <p>
+    <%= f.label :gluten_free %><br />
+    <%= f.text_field :gluten_free %>
+  </p>
+  <p>
+    <%= f.label :nut_allergy %><br />
+    <%= f.text_field :nut_allergy %>
+  </p>
+  <p>
+    <%= f.label :other_food_issue %><br />
+    <%= f.text_field :other_food_issue %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :message %><br />
+    <%= f.text_area :message %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @response %> |
+<%= link_to 'Back', responses_path %>

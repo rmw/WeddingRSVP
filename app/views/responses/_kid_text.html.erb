@@ -1,0 +1,7 @@
+<tr>
+	<%= render :partial => 'invitee_text_cells', :object => kid_text %>
+	<td>
+		<%=kid_text.need_babysitter %>
+	</td>
+	<%= render :partial => 'rehearsal_invitee_text_cells', :object => kid_text if show_rehearsal %>
+</tr>

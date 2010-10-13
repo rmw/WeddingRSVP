@@ -1,0 +1,40 @@
+<h1>Listing invitees</h1>
+
+<table>
+  <tr>
+    <th>Login</th>
+	<th>Name</th>
+	<th>Response</th>
+    <th>Coming</th>
+    <th>Kid</th>
+    <th>Need Babysitter?</th>
+	<th>Rehearsal</th>
+  </tr>
+
+<% @invitees.each do |invitee| %>
+  <tr>	
+	<td><%=link_to invitee.login.login_and_password, :controller => 'logins', :action => 'show', :id => invitee.login.id %></td>
+    <td><%=h invitee.name %></td>
+	<td>
+		<%= render :partial => 'response_link_or_none', :object => invitee.login %>
+	</td>
+	<td><%=h invitee.coming if invitee.login.has_response? %></td>
+	<td><%=h invitee.is_kid %></td>
+	<td><%=h invitee.need_babysitter if invitee.login.has_response? %></td>
+	<td>
+		<% if invitee.login.rehearsal_invited %>
+			<%=h invitee.rehearsal_coming if invitee.login.has_response? %>
+		<% else %>
+			Not invited
+		<% end %>
+	</td>
+    <td><%= link_to 'Show', invitee %></td>
+    <td><%= link_to 'Edit', edit_invitee_path(invitee) %></td>
+    <td><%= link_to 'Destroy', invitee, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New invitee', new_invitee_path %>

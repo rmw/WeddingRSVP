@@ -1,0 +1,17 @@
+<table id="invitees_edit">
+	<tr class="adults">
+		<%= render :partial => 'invitee_header_cells', :locals => { :show_babysitter => false, :show_rehearsal => invitees.login.rehearsal_invited } %>
+	</tr>
+	<%= render :partial => adult_partial, :collection => invitees.adults, :locals => { :show_rehearsal => invitees.login.rehearsal_invited } %>
+</table>
+
+ <% if !invitees.kids.empty? %>
+	<table id="kids_edit">
+	<tr class="kids">
+		<%= render :partial => 'invitee_header_cells', :locals => { :show_babysitter => !invitees.kids.empty?, :show_rehearsal => invitees.login.rehearsal_invited } %>
+	</tr>
+	<%= render :partial => kid_partial, :collection => invitees.kids, :locals => { :show_rehearsal => invitees.login.rehearsal_invited } %>
+	</table>
+ <% end %>
+
+ 

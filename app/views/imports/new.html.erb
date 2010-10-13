@@ -1,0 +1,7 @@
+<h2>Import</h2>
+<br />
+<% form_for @import, :html => { :multipart => true } do |f| %>
+	Choose file: <%= f.file_field :csv %>
+	<br /><br />
+	<%= f.submit "Import" %>
+<% end %>

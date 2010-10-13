@@ -1,0 +1,22 @@
+<div id="response_login">
+	<% form_tag do %>
+		<fieldset>
+			<legend>Login to RSVP</legend>
+			
+			<div>
+				<label for="name">First Name:</label>
+				<%= text_field_tag :name, params[:name] %>
+			</div>
+			
+			<div>
+				<label for="password">Zip Code:</label>
+				<%= password_field_tag :password, params[:password], :class => 'response_login_password' %>
+			</div>
+			
+			<br />
+			<%= submit_tag "Login" %>
+			<br />
+			<p class="info">Can't login? <a href="mailto:wedding@miller-webster.com">Email us.</a></p>
+		</fieldset>
+	<% end %>
+</div>

@@ -1,0 +1,3 @@
+RsvpMailer#responded
+
+Find me in app/views/rsvp_mailer/responded.erb

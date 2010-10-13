@@ -1,0 +1,17 @@
+<h1> <%= h @headline %></h1>
+
+<table>
+  <tr>
+    <th>Login</th>
+	<th>Name</th>
+	<th>Response</th>
+  </tr>
+
+<% @guests.each do |invitee| %>
+  <tr>	
+	<td><%=link_to invitee.login.login_and_password, :controller => 'logins', :action => 'show', :id => invitee.login.id %></td>
+    <td><%=link_to h(invitee.name), :controller => 'invitees', :action => 'show', :id => invitee.id %></td>
+	<td><%=link_to 'View Response', :controller =>'responses', :action => 'show', :id => invitee.response.id %>
+  </tr>
+<% end %>
+</table>

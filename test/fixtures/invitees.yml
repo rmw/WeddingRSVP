@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  coming: 
+  is_kid: 
+
+two:
+  name: MyString
+  coming: 
+  is_kid: 

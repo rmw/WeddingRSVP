@@ -1,0 +1,40 @@
+<%= render :partial => 'invitees', :object => @response, :locals => { :adult_partial => 'adult_text', :kid_partial => 'kid_text' } %>
+
+<p>
+  <b>Vegetarian:</b>
+  <%=h @response.vegetarian %>
+</p>
+
+<p>
+  <b>Vegan:</b>
+  <%=h @response.vegan %>
+</p>
+
+<p>
+  <b>Gluten free:</b>
+  <%=h @response.gluten_free %>
+</p>
+
+<p>
+  <b>Nut allergy:</b>
+  <%=h @response.nut_allergy %>
+</p>
+
+<p>
+  <b>Other food issue:</b>
+  <%=h @response.other_food_issue %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @response.email %>
+</p>
+
+<p>
+  <b>Message:</b>
+  <%=h @response.message %>
+</p>
+
+
+<%= link_to 'Edit', edit_response_path(@response) %> |
+<%= link_to 'Back', responses_path %>

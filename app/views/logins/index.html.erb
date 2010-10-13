@@ -1,0 +1,34 @@
+<h1>Listing logins</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Password</th>
+    <th>Primary Invitee</th>
+    <th>Response</th>
+	<th>Invited to Rehearsal</th>
+  </tr>
+
+<% @logins.each do |login| %>
+  <tr>
+    <td><%=h login.name %></td>
+    <td><%=h login.password %></td>
+	<td><%=h login.primary_invitee_name %></td>
+	<td>
+		<%if login.has_response? %>
+			<%= link_to 'View Response', :controller => 'responses', :action => 'show', :id => login.response.id %>
+		<%else %>
+			None
+		<% end %>
+	</td>
+	<td><%= login.rehearsal_invited %></td>
+    <td><%= link_to 'Show', login %></td>
+    <td><%= link_to 'Edit', edit_login_path(login) %></td>
+    <td><%= link_to 'Destroy', login, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New login', new_login_path %>

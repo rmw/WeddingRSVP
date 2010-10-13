@@ -1,0 +1,6 @@
+<% @login = response_link_or_none %>
+<%if @login.has_response? %>
+	<%= render :partial => 'response_link', :object => @login %>
+<%else %>
+	None
+<% end %>

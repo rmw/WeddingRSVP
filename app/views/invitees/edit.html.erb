@@ -1,0 +1,46 @@
+<h1>Editing invitee</h1>
+
+<% form_for(@invitee) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+	<%= f.label :login %><br />
+	<%= f.collection_select(:login_id, Login.all, :id, :login_and_password, {:prompt => true}) %>	
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+	<p>
+	    <%= f.label :is_kid %><br />
+	    <%= f.check_box :is_kid %>
+	  </p>
+	<p>
+	    <%= f.label :is_primary %><br />
+	    <%= f.check_box :is_primary %>
+	  </p>
+	<% if @invitee.login.has_response? %>
+  <p>
+    <%= f.label :coming %><br />
+    <%= f.check_box :coming %>
+  </p>
+	<% if @invitee.login.rehearsal_invited %>
+		<p>
+			<%= f.label :rehearsal_coming %><br />
+			<%= f.check_box :rehearsal_coming %>
+		</p>
+	<% end %>
+  <p>
+    <%= f.label :need_babysitter %><br />
+    <%= f.check_box :need_babysitter %>
+  </p>
+
+ <% end %>
+  
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @invitee %> |
+<%= link_to 'Back', invitees_path %>

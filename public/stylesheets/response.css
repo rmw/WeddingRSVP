@@ -1,0 +1,128 @@
+body {
+	
+	background-color: #3ea7ce;
+}
+
+#main {
+	margin: 10px auto;
+	text-align:left;
+	width: 700px;
+	padding: 0;
+	background-color: white;
+}
+
+#content {
+	padding: 10px;
+	border: solid #c5190b 2px;
+	margin-top: -1px;
+	height: 200px;
+	min-height: 200px;
+	height: auto;
+}
+
+#content table {
+	width: 650px;
+}
+
+.info {
+	font-size: smaller;
+	font-style: italic;
+}
+
+#response_login div {
+	margin-bottom: 5px;
+	margin-top: 10px;
+}
+
+#response_login div input {
+	width: 150px;
+}
+
+.response_login_password {
+	margin-left: 13px;
+}
+
+#response_login fieldset {
+	height: 150px;
+}
+
+#kids_edit, #invitees_edit {
+	padding: 2px 10px;
+}
+
+#kids_edit th, #invitees_edit th {
+	text-align: center;
+}
+
+#kids_edit th, #invitees_edit th, #kids_edit td, #invitees_edit td {
+	padding-right: 10px;
+}
+
+#kids_edit {
+	background:transparent url('../images/kids-bg.gif') repeat top right;
+	padding-bottom: 20px;
+	margin-top: 10px;
+}
+
+.kids {
+	background: transparent url('../images/kids.gif') no-repeat top left;
+}
+
+.kids th {
+	padding-top: 45px;
+}
+
+td.invitee_edit_there  {
+	width: 125px;
+}
+
+td.invitee_edit_there .there {
+	margin-left: 20px;
+	margin-top: 5px;
+}
+
+td.invitee_edit_there .square  {
+	margin-left: 40px;
+	margin-top: 15px;
+}
+
+.invitee_babysitter {
+	width: 100px;
+	text-align: center;
+}
+
+.babysitter {
+	margin-left: 37px;
+}
+
+#food {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#food td input {
+	width: 20px;
+}
+
+#food td label {
+	text-align: left;
+}
+
+td.food_label {
+	width: 25px;
+}
+
+#food td textarea {
+	height: 100px;
+	width: 230px;
+}
+
+.food_other {
+	padding-left: 95px;
+}
+
+textarea.response_message {
+	width: 300px;
+	height: 150px;
+}
+

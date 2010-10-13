@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  vegetarian: 1
+  vegan: 1
+  gluten_free: 1
+  nut_allergy: 1
+  other_food_issue: MyString
+  email: MyString
+  message: MyText
+
+two:
+  vegetarian: 1
+  vegan: 1
+  gluten_free: 1
+  nut_allergy: 1
+  other_food_issue: MyString
+  email: MyString
+  message: MyText

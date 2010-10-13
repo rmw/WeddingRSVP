@@ -1,0 +1,32 @@
+<h1>Listing responses</h1>
+
+<table>
+  <tr>
+	<th>Login</th>
+    <th>Vegetarian</th>
+    <th>Vegan</th>
+    <th>Gluten free</th>
+    <th>Nut allergy</th>
+    <th>Other food issue</th>
+    <th>Email</th>
+    <th>Message</th>
+  </tr>
+
+<% @responses.each do |response| %>
+  <tr>
+	<td><%=h response.login.login_and_primary_invitee_names %>
+    <td><%=h response.vegetarian %></td>
+    <td><%=h response.vegan %></td>
+    <td><%=h response.gluten_free %></td>
+    <td><%=h response.nut_allergy %></td>
+    <td><%=h response.other_food_issue %></td>
+    <td><%=h response.email %></td>
+    <td><%=h response.message %></td>
+    <td><%= link_to 'Show', response %></td>
+    <td><%= link_to 'Edit', edit_response_path(response) %></td>
+    <td><%= link_to 'Destroy', response, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

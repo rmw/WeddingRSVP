@@ -1,0 +1,27 @@
+<div>
+	<% form_tag do %>
+		<fieldset>
+			<legend>Email Guests!</legend>
+			<div>
+				<label for="guests">Guests coming to:</label>
+				    <br><%= radio_button_tag 'guests', 'coming', true %> Wedding
+				    <br><%= radio_button_tag 'guests', 'rehearsal_coming' %> Rehearsal
+			</div>
+			
+				<div>
+					<label for="subject">Subject:</label><br />
+					<%= text_field_tag :subject, params[:subject] %>
+				</div>
+			
+			<div>
+				<label for="message">Message:</label><br />
+				<%= text_area_tag :message, params[:message], :size => "50x20" %>
+			</div>
+			
+			<div>
+				<%= submit_tag "Send" %>
+			</div>
+			
+		</fieldset>
+	<% end %>
+</div>

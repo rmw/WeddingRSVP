@@ -1,0 +1,17 @@
+<tr>
+	<td colspan=6>
+		<% @kid = kid %>
+		<%= error_messages_for :kid %>
+	</td>
+</tr>
+
+<% fields_for "response[kid_attributes][]", kid do |kid_form| %>
+<tr>
+	<%= render :partial => 'invitee_cells', :object => kid_form %>
+	<td>
+		<!-- TODO: only enable this if coming is true/true radio is checked -->
+		<%=kid_form.check_box :need_babysitter, :class => 'babysitter' %>
+	</td>
+	<%= render :partial => 'rehearsal_invitee_cells', :object => kid_form if show_rehearsal %>
+</tr>
+<% end %>

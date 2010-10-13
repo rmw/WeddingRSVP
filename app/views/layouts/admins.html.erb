@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Admins: <%= controller %> <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'scaffold' %>
+	<%= stylesheet_link_tag 'admins'%>
+</head>
+<body>
+
+<p style="color: green"><%= flash[:notice] %></p>
+
+<div id="columns">
+<div id="nav">
+	<p>
+	<%= link_to 'Responses', :controller => 'responses' %><br />
+	<%= link_to 'Invitees', :controller => 'invitees' %><br />
+	<%= link_to 'Logins', :controller => 'logins' %><br />
+	<%= link_to 'Import', :controller => 'imports', :action => 'new' %><br />
+	<%= link_to 'Admins', :controller => 'admins' %><br />	
+	<%= link_to 'Main', :controller => 'admins', :action => 'main' %>
+	</p>
+	* * *
+	<p>
+		<b>REPORTS</b><br />
+		<%= link_to 'Coming', :controller => 'admins', :action => 'coming', :event => 'wedding', :coming => 'true' %><br />
+		<%= link_to 'Not Coming', :controller => 'admins', :action => 'coming', :event => 'wedding', :coming => 'false' %><br />
+		<%= link_to 'Coming to Rehearsal', :controller => 'admins', :action => 'coming', :event => 'rehearsal', :coming => 'true' %><br />
+		<%= link_to 'Not Coming to Rehearsal', :controller => 'admins', :action => 'coming', :event => 'rehearsal', :coming => 'false' %><br />
+		<%= link_to 'Not Responded', :controller => 'logins', :action => 'not_responded' %>
+	<p>
+		<p>
+			<%= link_to 'Email Guests', :controller => 'admins', :action => 'email' %>
+			</p>
+</div>
+
+<div id="main">
+
+<%= yield %>
+
+</div>
+</div>
+
+</body>
+</html>

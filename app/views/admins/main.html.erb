@@ -1,0 +1,16 @@
+<h1>Welcome</h1>
+
+<p><%= pluralize(@total_guests, "guest") %> have said they are coming!</p>
+<p>Total responses: <%= pluralize(@total_responses, "response") %> out of <%= @total_logins %></p>
+<!-- TODO: make this a partial!! and use for rsvp deadline and wedding date -->
+<p>RSVP deadline
+	<% if @rsvp_time.future? %>
+		is in 
+	<%	else %>
+		was
+	<% end %>
+	<%= time_ago_in_words(@rsvp_time) %>
+	<%= "ago" if !@rsvp_time.future? %>
+</p>
+<p>Becca and Adam Get Hitched in <%= time_ago_in_words(@wedding_time) %>!!</p>
+	

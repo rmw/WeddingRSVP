@@ -1,0 +1,28 @@
+<p>
+  <b>Name:</b>
+  <%=h @login.name %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%=h @login.password %>
+</p>
+
+<p>
+	<b>Invitees:</b><br />
+	<%=h @login.primary_invitee_name %> (Primary)
+	<br />
+	<% @login.non_primary_invitees.each do |invitee| %>
+		<%=h invitee.name %><br /
+	<% end %>
+</p>
+
+<p>
+	<b>Invited to Rehearsal?:</b>
+	<%= @login.rehearsal_invited %>
+</p>
+
+<!-- TODO: show all invitees for this login (new route and action but same display as index? => partial) -->
+
+<%= link_to 'Edit', edit_login_path(@login) %> |
+<%= link_to 'Back', logins_path %>

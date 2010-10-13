@@ -1,0 +1,14 @@
+<h1>Guests who have not responded</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<% @logins.each do |login| %>
+  <tr>
+    <td><%=h login.login_and_primary_invitee_names %></td>
+    <td><%= link_to 'Show', :action => 'show', :id => login.id %></td></td>
+  </tr>
+<% end %>
+</table>

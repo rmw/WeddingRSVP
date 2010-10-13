@@ -1,0 +1,14 @@
+<tr>
+	<td colspan=4>
+		<% @adult = adult %>
+		<%= error_messages_for :adult %>
+	</td>
+</tr>
+
+<% fields_for "response[adult_attributes][]", adult do |adult_form| %>
+	<tr>
+		<%= render :partial => 'invitee_cells', :object => adult_form %>
+		<td>&nbsp;</td>
+		<%= render :partial => 'rehearsal_invitee_cells', :object => adult_form if show_rehearsal %>
+	</tr>
+<% end %>

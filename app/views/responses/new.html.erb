@@ -1,0 +1,46 @@
+<h1>RSVP</h1>
+<% form_for :response, :url => responses_path do |f| %>
+  <%= f.error_messages %>
+
+ <%= render :partial => 'invitees', :object => @response, :locals => { :adult_partial => 'adult', :kid_partial => 'kid' } %>
+
+
+	<table id="food">
+		<tr>
+			<th colspan="2">Number in your party who are ...</th>
+			<td class="food_other">Have a food issue that's not listed?</td>
+		</tr>
+		<tr>
+		 	<td class="food_label"><%= f.text_field :vegetarian %></td>
+		  	 <td><%= f.label :vegetarian %></td>
+			<td class="food_other" rowspan=4>Tell us about it.<br />
+				<%= f.text_area :other_food_issue %></td>
+		</tr>
+		  <tr>
+		    <td class="food_label"><%= f.text_field :vegan %></td>
+			    <td><%= f.label :vegan %></td>
+		  </tr>
+		  <tr>
+		    <td class="food_label"><%= f.text_field :gluten_free %></td>
+			    <td><%= f.label :gluten_free %></td>
+		  </tr>
+		  <tr>
+		    <td class="food_label"><%= f.text_field :nut_allergy %></td>
+			    <td><%= f.label :nut_allergy %></td>
+		  </tr>
+		</table>
+
+<table id="response_message">
+  <tr>
+	<td>Verify your email address so we can keep in touch.</td>
+    <td><%= f.text_field :email %></td>
+  </tr>
+  <tr>
+    <td valign="top">Wanna say 'hi' or tell us how awesome we are? <br />Do it here.</td>
+    <td><%= f.text_area :message, :class => 'response_message' %></td>
+  </tr>
+</table>
+  <p>
+    <%= submit_tag 'RSVP Me!' %>
+  </p>
+<% end %>

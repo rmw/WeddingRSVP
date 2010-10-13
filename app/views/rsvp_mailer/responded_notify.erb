@@ -1,0 +1,26 @@
+<%= @response.login.login_and_primary_invitee_names -%> has RSVPed!
+
+<% @response.adults.each do |guest| %>
+	<%= guest.name %>
+		Coming to wedding: <%= guest.coming %>
+	<% if @response.login.rehearsal_invited -%>
+	Coming to rehearsal: <%= guest.rehearsal_coming %>
+	<% end %>
+<% end %>
+<% @response.kids.each do |guest| %>
+	<%= guest.name %>
+		Coming to wedding: <%= guest.coming %>
+		Needs babysitter: <%= guest.need_babysitter %>
+	<% if @response.login.rehearsal_invited -%>
+	Coming to rehearsal: <%= guest.rehearsal_coming %>
+	<% end %>
+<% end %>
+
+Vegetarian: <%=h @response.vegetarian %>
+Vegan: <%=h @response.vegan %>
+Gluten free: <%=h @response.gluten_free %>
+Nut allergy: <%=h @response.nut_allergy %>
+Other food issue: <%=h @response.other_food_issue %>
+
+Email: <%=h @response.email %>
+Message: <%=h @response.message %>

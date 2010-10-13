@@ -1,0 +1,6 @@
+<td>
+	<%=invitee_cells.text_field :name %>
+	<%=invitee_cells.hidden_field :id %>
+</td>
+<td class="invitee_edit_there"><%=invitee_cells.radio_button :coming, "true", :class => 'there' %>
+<%=invitee_cells.radio_button :coming, "false", :class => 'square' %><br /><span class="info">Be there or be square?</span></td>

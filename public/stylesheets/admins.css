@@ -1,0 +1,24 @@
+#columns {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#nav {
+	float: left;
+	background-color: red;
+	color: white;
+	padding: 10px;
+	min-height: 200px;
+	height: auto;
+}
+
+#nav, #nav a {
+	color: white;
+}
+
+#main {
+	padding: 1px 10px 10px 200px;
+	margin-top: -5px;
+}

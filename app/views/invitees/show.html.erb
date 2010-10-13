@@ -1,0 +1,38 @@
+<p>
+	<b>Login</b>
+	<%=h @invitee.login.name %>
+</p>
+<p>
+  <b>Name:</b>
+  <%=h @invitee.name %>
+</p>
+<p>
+  <b>Is kid?:</b>
+  <%=h @invitee.is_kid %>
+</p>
+<p>
+  <b>Is primary?:</b>
+  <%=h @invitee.is_primary %>
+</p>
+
+<% if @invitee.login.has_response? %>
+	<p><b>Response:</b></p>
+	<p>
+	  <b>Coming:</b>
+	  <%=h @invitee.coming %>
+	</p>
+	<% if @invitee.login.rehearsal_invited %>
+		<p>
+			<b>Coming to rehearsal:</b>
+			<%= @invitee.rehearsal_coming %>
+		</p>
+	<% end %>
+	<p>
+	  <b>Need babysitter?:</b>
+	  <%=h @invitee.need_babysitter %>
+	</p>
+	<%= render :partial => 'response_link', :object => @invitee.login %> |
+<% end %>
+
+<%= link_to 'Edit', edit_invitee_path(@invitee) %> |
+<%= link_to 'Back', invitees_path %>
